@@ -30,7 +30,7 @@
 
 
 
-<pre style="font-size: 8pt;">Upload file page
+<pre style="font-size: 8pt;">File upload log
 <?php
     include "functions.php";
 
@@ -64,6 +64,7 @@
 			else {
 				addToDbArr($_FILES, $_POST);
 				$res = move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+				header("Location: ./");
 			}
 		}
 ?>
@@ -83,7 +84,6 @@
 				name="student_name"
 				type="text"
 				class="form-control"
-				value="temp name"
 				placeholder="Minimum of 5 characters">
 			</div>
 		</div>
@@ -97,7 +97,6 @@
 				name="title"
 				type="text"
 				class="form-control"
-				value="This is a simple title"
 				placeholder="Minimum of 10 characters">
 			</div>
 		</div>
@@ -156,8 +155,10 @@
 		inputStdName = $('input#formStudentName');
 		inputFile = $('input#fileToUpload');
 
+		
+		
+		
 		inputSlideTitle.keyup(function(e){
-			console.log(hasTitle);
 			if($(this).val().length >= 10){
 				hasTitle = true;
 			}
@@ -167,6 +168,7 @@
 			activateSubmit(hasDate, hasFile, nameIsMinimum, hasTitle);
 		});
 
+		
 		inputStdName.keyup(function(e){
 			if($(this).val().length >= 5){
 				nameIsMinimum = true;

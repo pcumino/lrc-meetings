@@ -39,19 +39,18 @@
 
 
 
-
-
-	<pre style="font-size: 8pt;"><?php
+	<!-- <pre style="font-size: 8pt;">Welcome! -->
+	<?php
 	include "functions.php";
 
 	$db_arr = get_db();
 
 	// print_r($db_arr);
 	?>
-	</pre>
+	<!-- </pre> -->
 
 
-
+	<hr>
 
 
 
